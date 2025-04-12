@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Get current branch
+branch=$(git rev-parse --abbrev-ref HEAD)
+
+echo "🧠 Updating GPT memory for branch: $branch"
+
+# Run memory builder
+python memory_builder.py --branch "$branch"
+
+# Exit if the memory build fails
+if [ $? -ne 0 ]; then
+  echo "❌ Memory update failed. Commit aborted."
+  exit 1
+fi
+
+echo "✅ Memory updated successfully!"
