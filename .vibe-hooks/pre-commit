@@ -1,17 +1,55 @@
 #!/bin/bash
 
-# Get current branch
+# Detect current branch
 branch=$(git rev-parse --abbrev-ref HEAD)
 
-echo "🧠 Updating GPT memory for branch: $branch"
+echo "🧠 VibeTrail activated for branch: $branch"
 
-# Run memory builder
+# Get list of staged files that are added, copied, or modified
+files=$(git diff --cached --name-only --diff-filter=ACM)
+
+if [ -z "$files" ]; then
+  echo "⚠️  No relevant files staged. Skipping VibeTrail summarization."
+  exit 0
+fi
+
+# Define allowed file types
+allowed_exts="py|js|ts|html|css|java"
+
+# Activate Python venv if needed (assumes 'venv' in project root)
+if [ -d "venv" ]; then
+  source venv/Scripts/activate
+fi
+
+# Summarize each file
+for file in $files; do
+  if [[ $file =~ \.($allowed_exts)$ ]]; then
+    echo "🧠 Summarizing staged file: $file"
+    PYTHONPATH=src python -c "
+from summarizer import summarize_file
+from writer import write_summary
+import os
+
+summary = summarize_file('${file}')
+if summary:
+    write_summary('${file}', summary, branch_name='${branch}')
+else:
+    print('⚠️ No summary generated for: ${file}')
+" || {
+      echo "❌ Error summarizing: $file"
+      exit 1
+    }
+  else
+    echo "⏭️ Skipping non-source file: $file"
+  fi
+done
+
+# Update long-term memory
 python memory_builder.py --branch "$branch"
 
-# Exit if the memory build fails
 if [ $? -ne 0 ]; then
   echo "❌ Memory update failed. Commit aborted."
   exit 1
 fi
 
-echo "✅ Memory updated successfully!"
+echo "✅ VibeTrail memory updated successfully!"
