@@ -1,0 +1,25 @@
+{
+    "scan_path": "./src",
+    "ignore_dirs": [
+    "allowed_extensions",
+      ".git",
+      "__pycache__",
+      "node_modules",
+      ".idea",
+      ".vscode",
+      "venv",
+      "$RECYCLE.BIN",
+      "site-packages",
+      "JetBrains",
+      "Microsoft VS Code",
+      "AppData",
+      "Program Files",
+      "Program Files (x86)",
+      "Windows",
+      "IntelliJ IDEA",
+      "plugins"
+    ],
+    "allowed_extensions": [".py", ".js", ".ts", ".html", ".css", ".java"],
+    "mock_ai": true
+  }
+  
