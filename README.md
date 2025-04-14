@@ -4,6 +4,40 @@
 
 ---
 
+
+
+
+
+## ⚙️ What it does:
+
+ Scans your codebase and auto-summarizes relevant files
+
+ Saves AI-friendly summaries in both Markdown and JSON
+
+ Builds long-term GPT-compatible memory for ongoing conversations
+
+ Keeps track of file changes with smart hashing
+
+ Detects active Git branches for contextual tracking
+
+ Hooks into Git pre-commit to update memory automatically
+
+ Saves OpenAI tokens with offline/mock modes for testing
+
+
+## 🌍 Why VibeTrail?
+Use it to create the illusion of persistent AI memory — without relying on expensive cloud APIs or massive context windows.
+It’s your trail map. Your memory vault. Your AI’s brain — powered by your repo.
+
+Track your path. Remember the code.
+🧠 VibeTrail.
+
+
+
+
+
+
+
 ## 🔧 Getting Started
 
 ### 📥 Clone & Set Up
