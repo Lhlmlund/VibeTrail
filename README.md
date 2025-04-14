@@ -17,7 +17,7 @@ python setup_hooks.py
 
 ---
 
-## 🧪 (Optional) Initial Memory Scan on Main
+##  (Optional) Initial Memory Scan on Main
 ```bash
 # Generate summaries and build memory for the main branch
 python src/runner.py --mock --limit 20 --branch main
@@ -26,7 +26,7 @@ python memory_builder.py --branch main
 
 ---
 
-## 🌿 Ideal Branch Workflow
+##  Ideal Branch Workflow
 
 ```bash
 # Create or switch to a new branch
@@ -45,7 +45,7 @@ git commit -m "Initial work"
 
 ---
 
-## 🧠 Ownership & Origin
+##  Ownership & Origin
 
 > *VibeTrail* is an original open-source AI development tool created by **Linus Holmlund**, 2025.  
 > This repository serves as the official source of truth and first public use of the name and project.
@@ -54,7 +54,7 @@ git commit -m "Initial work"
 
 ---
 
-### 🌄 Optional ASCII Banner (Add to your terminal header or README flair)
+### ASCII Banner
 ```text
 ╔════════════════════════════════════╗
 ║        🧠 VibeTrail Ascent        			║
@@ -64,13 +64,6 @@ git commit -m "Initial work"
 
 ---
 
-## 🧭 Next Steps
-
-- Add your `LICENSE` to the root directory
-- Set up your domain: `vibetrail.ai` or `vibetrail.dev`
-- Begin sharing with confidence — this is your trail now
-
-
-🌐 Official site: [https://vibetrail.dev](https://vibetrail.dev)
+## 🌐 Official site: [https://vibetrail.dev](https://vibetrail.dev)
 
 ---
